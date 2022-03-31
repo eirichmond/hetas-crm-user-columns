@@ -36,6 +36,26 @@ function map_statecodes($statecode) {
 	return $statecodes[$statecode];
 }
 
+function map_business_statuscodes($statuscode) {
+	$statuscodes = array(
+		'1' => 'Approved',	
+		'806070006' => 'Approved With Conditions',
+		'806070001' => 'Pending',
+		'806070002' => 'Lapsed',
+		'806070000' => 'Suspended',
+		'806070004' => 'Draft',
+		'806070009' => 'Covid Suspended',
+		'806070010' => 'Covid Refresher',
+		'806070011' => 'Covid £50 Paid',
+		'806070007' => 'Cancelled',
+		'806070005' => 'Expired',
+		'2' => 'Inactive',
+		'806070003' => 'Removed',
+		'806070008' => 'Changed name'
+	);
+	return $statuscodes[$statuscode];
+}
+
 function map_statuscodes($statuscode) {
 	$statuscodes = array(
 		'1' => 'Applicant',
@@ -140,7 +160,7 @@ function get_business_data() {
 	foreach($business->value as $hbusiness) {
 		$business_data['name'] = $hbusiness->name;
 		$business_data['van_hetasid'] = $hbusiness->van_hetasid;
-		$business_data['state'] = map_statecodes($hbusiness->statuscode);
+		$business_data['status'] = map_business_statuscodes($hbusiness->statuscode);
 		$business_data['address1_composite'] = $hbusiness->address1_composite;
 		$business_data['address1_line1'] = $hbusiness->address1_line1;
 		$business_data['address1_line2'] = $hbusiness->address1_line2;

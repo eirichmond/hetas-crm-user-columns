@@ -78,7 +78,7 @@
         console.log(response);
         var html = '<ul>';
         html += '<li><strong>' + response.name + '</strong></li>';
-        html += '<li><strong>State:</strong> ' + response.state + '</li>';
+        html += '<li><strong>Status:</strong> ' + response.status + '</li>';
         html += '<li><strong>HETAS ID:</strong> ' + response.van_hetasid + '</li>';
         html += '<li>' + response.address1_line1 + '</li>';
         html += '<li>' + response.address1_line2 + '</li>';
